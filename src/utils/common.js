@@ -20,6 +20,25 @@ export function debounce(handle, delay = 200) {
   };
 }
 
+export function debouncePromise(handle, delay = 200) {
+  let timer = null;
+  return function() {
+    return new Promise((resolve, reject) => {
+      try {
+        const _self = this,
+          _args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(async function() {
+          const data = await handle.apply(_self, _args);
+          resolve(data);
+        }, delay);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  };
+}
+
 /**
  * 打印请求/响应日志
  * @param {*} response axios请求/响应参数
