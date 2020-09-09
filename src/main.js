@@ -11,7 +11,7 @@ import { Row, Col } from 'vant';
 // Vue.use(VuePageStack, { router });
 
 // 开发环境下面使用vConsole进行调试
-if (config.ENV === 'test') {
+if (config.VCONSOLE) {
   const VConsole = require('vconsole');
   new VConsole();
 }

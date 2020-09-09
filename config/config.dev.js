@@ -1,11 +1,13 @@
 // 鹊接口地址
-const API_URL = 'https://test.api.bechangedt.com:8069';
+const API_URL = '';
 // const API_URL = 'http://192.168.37.8:8069';
 
 // 埋点上报 url
-const REPORT_URL = 'https://jdapp.bechangedt.com:18088';
+const REPORT_URL = '';
 
 const LOG_PRINT = true;
+
+const VCONSOLE = true;
 
 const ENV = 'dev';
 
@@ -28,7 +30,8 @@ const config = {
   API_URL,
   REPORT_URL,
   ADMIN_INFO,
-  LOG_PRINT
+  LOG_PRINT,
+  VCONSOLE
 };
 
 export default config;
