@@ -1,4 +1,9 @@
-# vue3-ts-app
+# Vue3 + TS项目模板
+
+## 已配置
+```
+ESlint、prettier、TypeScript、Vant
+```
 
 ## Project setup
 ```
