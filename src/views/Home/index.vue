@@ -1,27 +1,43 @@
 <template>
   <div>
-    <van-button icon="plus" type="primary">按钮</van-button>
-    <van-loading /> 
-    <van-loading type="spinner" />
-
+    <van-button type="primary" @click="onClick">toHome</van-button>
+    <van-button type="primary" @click="onTest">onTest</van-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useInit } from '@/hooks';
 
 export default defineComponent({
-  name: '',
+  name: 'Home',
 
   setup() {
-    test();
-    return {};
+    const { store, router, route } = useInit();
+
+    console.log('router', router);
+
+    console.log('route', route)
+
+    console.log(store.state);
+
+    function onClick() {
+      console.log('click');
+      router.push('/about');
+    }
+
+    function onTest() {
+      store.commit('SET_DATA', { name: 'xtx', age: '17' });
+    }
+
+    return {
+      onClick,
+      onTest
+    };
   },
 
   components: {}
 });
-
-function test() {}
 </script>
 
 <style lang="less" scoped></style>
