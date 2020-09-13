@@ -1,5 +1,8 @@
 # Vue3 + TS项目模板
 
+## 关于本项目
+master分支为Vue2的项目模板内容，Vue3分支为Vue2的项目模板内容
+
 ## 已配置
 ```
 ESlint、prettier、TypeScript、Vant
