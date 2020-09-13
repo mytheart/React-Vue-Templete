@@ -1,28 +1,31 @@
 <template>
   <div>
     about
-    <p>
-      {{ count }}
-    </p>
+    <p>{{ count }}</p>
     <button @click="addCount">++</button>
     <p>
       <button @click="router.back()">router.back</button>
     </p>
-    <p>
-      {{ data }}
-    </p>
+    <p>{{ data }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, watch, toRef, ref, reactive, toRefs } from 'vue';
+import { defineComponent, watch, toRef, ref, reactive, toRefs, computed } from 'vue';
 import { useInit } from '@/hooks';
+import { mapState } from 'vuex';
 export default defineComponent({
   name: 'About',
 
   setup() {
     const { store, route, router } = useInit();
-    console.log('store.state', store.state);
+
+   const test = computed(()=>{
+      return {
+      ...mapState('global', ['globalName', 'count'])
+    }})
+    
+    console.log('test', mapState('global', ['globalName', 'count']))
 
     function addCount() {
       store.commit('global/ADD_COUNT', 10);
@@ -60,20 +63,22 @@ function getData() {
   });
 }
 
-function useRequest(url: string, ori: []) {
+function useRequest(url: string, ori: any) {
   const result = reactive({
     data: ori
   });
   new Promise((res, rej) => {
     getData()
-      .then((da: []) => {
+      .then(da => {
         // res({ da });
         // data.value = da;
         // data = da;
         result.data = da;
       })
       .catch(error => {
-        rej({ error });
+        rej({
+          error
+        });
       });
   });
 
