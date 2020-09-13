@@ -13,13 +13,11 @@ export default defineComponent({
   name: 'Home',
 
   setup() {
-    const { store, router, route } = useInit();
+    const { store, router } = useInit();
 
-    console.log('router', router);
-
-    console.log('route', route)
-
-    console.log(store.state);
+    // console.log('router', router);
+    // console.log('route', route)
+    // console.log(store.state);
 
     function onClick() {
       console.log('click');
@@ -27,7 +25,8 @@ export default defineComponent({
     }
 
     function onTest() {
-      store.commit('SET_DATA', { name: 'xtx', age: '17' });
+      // store.commit('/SET_DATA', { name: 'xtx', age: '17' });
+      console.log(store.state.global);
     }
 
     return {
