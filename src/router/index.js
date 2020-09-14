@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import settings from '../../settings';
+
 import Home from '../views/Home';
 import About from '../views/About';
 
@@ -9,6 +11,10 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    redirect: settings.prefix
+  },
+  {
+    path: `${settings.prefix}/home`,
     name: 'Home',
     component: Home,
     meta: {
@@ -16,7 +22,7 @@ const routes = [
     }
   },
   {
-    path: '/about',
+    path: `${settings.prefix}/about`,
     name: 'About',
     component: About,
     meta: {
