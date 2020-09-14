@@ -1,4 +1,4 @@
 export default {
-  prefix: '/adminweb',
+  prefix: '/prefix',
   apiPrefix: ''
 };
