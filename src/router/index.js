@@ -14,7 +14,7 @@ const routes = [
     redirect: settings.prefix
   },
   {
-    path: `${settings.prefix}/home`,
+    path: `${settings.prefix}`,
     name: 'Home',
     component: Home,
     meta: {
