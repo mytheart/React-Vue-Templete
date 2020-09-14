@@ -18,7 +18,3 @@ export default {
   }
 };
 </script>
-
-<style lang="less">
-@import './assets/less/reset.less';
-</style>

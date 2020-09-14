@@ -8,6 +8,9 @@ import settings from '../settings';
 import config from '../config';
 import { Row, Col } from 'vant';
 
+import '@/assets/less/reset.less';
+import '@/assets/less/index.less';
+
 // Vue.use(VuePageStack, { router });
 
 // 开发环境下面使用vConsole进行调试

@@ -1,7 +1,6 @@
 <template>
   <div>
     <p>{{ count }}</p>
-
   </div>
 </template>
 
@@ -22,5 +21,3 @@
 //   components: {}
 // };
 </script>
-
-<style lang="less" scoped></style>
