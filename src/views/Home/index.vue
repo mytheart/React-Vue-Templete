@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-button type="primary" @click="onClick">toHome</van-button>
+    <van-button type="primary" @click="onClick">toAbout</van-button>
     <van-button type="primary" @click="onTest">onTest</van-button>
   </div>
 </template>
